@@ -7,6 +7,7 @@ import '@fontsource/roboto/700.css';
 import {Box, CssBaseline, ThemeProvider} from "@mui/material";
 import theme from "./config/theme.js";
 import SideNav from "./compnents/SideNav.jsx";
+import AppHeader from "./compnents/AppHeader.jsx";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <React.Fragment>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
+                <AppHeader/>
                 <Box>
                     <SideNav/>
                     <Box component={'main'}></Box>
