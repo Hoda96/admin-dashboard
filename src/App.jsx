@@ -9,6 +9,22 @@ import theme from "./config/theme.js";
 import SideNav from "./compnents/SideNav.jsx";
 import AppHeader from "./compnents/AppHeader.jsx";
 
+
+/** @type {import("@mui/material").SxProps} */
+const styles = {
+    container: {
+        display: "flex",
+        bgcolor: "neutral.light",
+        height: "calc(100% - 64px)"
+    },
+    mainSection: {
+        p:1,
+        width:"100%",
+        height:"100%",
+        overflow:"auto"
+    }
+}
+
 function App() {
 
     return (
@@ -16,9 +32,9 @@ function App() {
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <AppHeader/>
-                <Box>
+                <Box sx={styles.container}>
                     <SideNav/>
-                    <Box component={'main'}></Box>
+                    <Box component={'main'} sx={styles.mainSection}></Box>
                 </Box>
             </ThemeProvider>
         </React.Fragment>
