@@ -2,6 +2,7 @@ import {AppBar, Badge, Box, IconButton, Toolbar} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import {Logout, Settings} from "@mui/icons-material";
+import { useProSidebar } from "react-pro-sidebar";
 
 /** @type {import("@mui/material").SxProps} */
 const styles = {
@@ -20,11 +21,12 @@ const styles = {
 }
 
 const AppHeader = () => {
+    const {collapseSidebar, toggleSidebar,broken}= useProSidebar();
+
     return (
         <AppBar position='sticky' sx={styles.appBar}>
             <Toolbar >
-                <IconButton onClick={() => {
-                }} color='secondary'>
+                <IconButton onClick={() =>broken? toggleSidebar(): collapseSidebar()} color='secondary'>
                     <MenuIcon/>
                 </IconButton>
                 <Box component={'img'}

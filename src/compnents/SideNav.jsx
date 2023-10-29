@@ -1,50 +1,79 @@
-import {Menu, MenuItem, Sidebar} from 'react-pro-sidebar';
-import {AnalyticsOutlined, DashboardOutlined, SourceOutlined, StyleOutlined} from "@mui/icons-material";
-import {useTheme} from "@emotion/react";
-import {Avatar, Box, Typography} from "@mui/material";
+import { Menu, MenuItem, Sidebar, useProSidebar } from "react-pro-sidebar";
+import { AnalyticsOutlined, DashboardOutlined, SourceOutlined, StyleOutlined } from "@mui/icons-material";
+import { useTheme } from "@emotion/react";
+import { Avatar, Box, Typography } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 /** @type {import("@mui/material").SxProps} */
 const styles = {
-    avatarContainer: {
-        display: "flex",
-        bgcolor: "neutral.light",
-        height: "calc(100% - 64px)"
-    },
-}
+  avatarContainer: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    my: 5
+    // bgcolor: "neutral.light",
+    // height: "calc(100% - 64px)"
+  },
+  avatar: {
+    width: "40%",
+    height: "auto"
+  },
+  avatarName: {
+    mt: 1
+  }
+
+};
 const SideNav = () => {
+  const { collapsed } = useProSidebar();
+  const theme = useTheme();
+  const location= useLocation();
 
-    const theme = useTheme();
-    return (
-        <Sidebar style={{
-            height: "100%",
-            top: "auto"
+  return (
+    <Sidebar style={{
+      height: "100%",
+      top: "auto"
+    }}
+             breakPoint="md"
+             backgroundColor={theme.palette.neutral.light}
+    >
+      <Box sx={styles.avatarContainer}>
+        <Avatar
+          sx={styles.avatar}
+          alt="Channle Owner" src="./src/assets/avatar.png" />
+        {!collapsed ?
+          <Typography variant="body2" sx={styles.avatarName}>Your Channel</Typography>
+          : null
+        }
+        {!collapsed ?
+          <Typography variant="overline" sx={styles.avatarName}>Everything About YT Thumbnail</Typography> : null }
+      </Box>
+
+      <Menu
+        menuItemStyles={{
+          button: ({active})=>{
+            return {
+              backgroundColor: active ? theme.palette.neutral.medium : undefined,
+            }
+          },
         }}
-                 breakPoint="md"
-                 backgroundColor={theme.palette.neutral.light}
-        >
-            <Box sx={styles.avatarContainer}>
-                <Avatar alt="Channle Owner" src="./src/assets/avatar.jpg"/>
-                <Typography varient="body2">Your Channel</Typography>
-            </Box>
+      >
+        <MenuItem active={location.pathname === '/'} component={<Link to="/"/>} icon={<DashboardOutlined />}>
+          <Typography varient="body2">Dashboard</Typography>
+        </MenuItem>
+        <MenuItem active={location.pathname === '/content'} component={<Link to="/content"/>} icon={<SourceOutlined />}>
+          <Typography varient="body2">Content</Typography>
+        </MenuItem>
+        <MenuItem active={location.pathname === '/analytics'} component={<Link to="/analytics"/>} icon={<AnalyticsOutlined />}>
+          <Typography varient="body2">Analytics</Typography>
+        </MenuItem>
+        <MenuItem active={location.pathname === '/customization'} component={<Link to="/customization"/>} icon={<StyleOutlined />}>
+          <Typography varient="body2">Customization</Typography>
+        </MenuItem>
 
-            <Menu>
-                <MenuItem active icon={<DashboardOutlined/>}>
-                    <Typography varient="body2">Dashboard</Typography>
-                </MenuItem>
-                <MenuItem icon={<SourceOutlined/>}>
-                    <Typography varient="body2">Content</Typography>
-                </MenuItem>
-                <MenuItem icon={<AnalyticsOutlined/>}>
-                    <Typography varient="body2">Analytics</Typography>
-                </MenuItem>
-                <MenuItem icon={<StyleOutlined/>}>
-                    <Typography varient="body2">Customization</Typography>
-                </MenuItem>
+      </Menu>
+    </Sidebar>
 
-            </Menu>
-        </Sidebar>
-
-    );
+  );
 };
 
 export default SideNav;

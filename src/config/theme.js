@@ -31,12 +31,12 @@ theme = createTheme(theme, {
             },
             fontWeight: 500,
             color: theme.palette.primary.dark,
-            dispaly: "block",
+            display: "block",
             cursor: "pointer",
         },
         cardTitle:{
             fontSize: "1.2rem",
-            dispaly: "block",
+            display: "block",
             fontWeight: 500,
         },
         h6:{
