@@ -14,7 +14,10 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.14",
+    "@mui/x-data-grid": "^5.17.26",
+    "chart.js": "^4.4.0",
     "react": "^17.0.0 || ^18.0.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.17.0"
@@ -26,6 +29,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
