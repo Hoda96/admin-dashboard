@@ -47,7 +47,7 @@ function Analytics() {
     <Box>
       <Typography sx={styles.pageTitle} variant="h5">Analytics</Typography>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs value={value} onChange={handleChange} aria-label="basic-tabs-example">
           <Tab label="Overview" id="tab-0" />
           <Tab label="Content" id="tab-1" />
           <Tab label="Audience" id="tab-2" />

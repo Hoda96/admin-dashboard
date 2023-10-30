@@ -28,8 +28,8 @@ function TopVideosList({ }) {
           <TableHead>
             <TableRow>
               <TableCell>Content</TableCell>
-              <TableCell align="right">Average view duration</TableCell>
-              <TableCell align="right">Views</TableCell>
+              <TableCell align="center">Average view duration</TableCell>
+              <TableCell align="center">Views</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -42,8 +42,8 @@ function TopVideosList({ }) {
 
                   {row.name}
                 </TableCell>
-                <TableCell align="right">{row.averageViewDuration}</TableCell>
-                <TableCell align="right">{row.views}</TableCell>
+                <TableCell align="center">{row.averageViewDuration}</TableCell>
+                <TableCell align="center">{row.views}</TableCell>
               </TableRow>
             ))}
           </TableBody>

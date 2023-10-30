@@ -59,7 +59,7 @@ export const mainChartOptions = {
       pointStyle: false
     },
     line: {
-      borderColor: 'rgb(95, 158, 199)',
+      borderColor: 'rgb(179, 66, 245)',
       fill: true,
       borderWidth: 1.5
     }
@@ -78,7 +78,7 @@ export const getMainChartData = () => {
       {
         label: 'Value',
         data: days.map(() => faker.datatype.number({ min: 400, max: 1000 })),
-        backgroundColor: 'rgba(161, 207, 237, 0.5)',
+        backgroundColor: 'rgba(179, 66, 245, 0.5)',
         animation: true
 
       },
@@ -103,7 +103,7 @@ export const realtimeChartData = {
     {
       label: 'Views',
       data: realtimeChartLabels.map(() => faker.datatype.number({ min: 30, max: 90 })),
-      backgroundColor: 'rgb(95, 158, 199)',
+      backgroundColor: 'rgb(179, 66, 245)',
       animation:true
     }
   ],

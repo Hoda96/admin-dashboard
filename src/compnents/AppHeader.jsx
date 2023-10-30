@@ -13,8 +13,8 @@ const styles = {
     },
     appLogo: {
         borderRadius: 2,
-        width: "80px",
-        height: "50px",
+        width: "40px",
+        height: "40px",
         ml: "5px",
 
     }
@@ -31,7 +31,7 @@ const AppHeader = () => {
                 </IconButton>
                 <Box component={'img'}
                      sx={styles.appLogo}
-                     src="./src/assets/logo.jpg"
+                     src="./src/assets/logo.png"
                 />
                 <Box sx={{flexGrow:1}}/>
                 <IconButton title="notification" color="secondary">
